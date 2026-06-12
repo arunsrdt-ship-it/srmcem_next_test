@@ -12,6 +12,8 @@ import "../src/index.css";
 import "../src/App.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Head from "next/head";
+
 
 const Header = dynamic(() => import("../src/components/header/Header"), { ssr: false });
 const Footer = dynamic(() => import("../src/components/footer/Footer"), { ssr: false });
@@ -138,6 +140,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <Provider store={store}>
+      <Head>
+        <title>Shri Ramswaroop Memorial College of Engineering & Management | SRMCEM</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <RouterRuntimeProvider matches={matches} outlet={null}>
         <Header />
         <main className="mt-[51px]">
